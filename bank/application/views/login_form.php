@@ -32,7 +32,7 @@ if(isset($error_message)) {
 }
 echo validation_errors();
 ?>
-
+<br>
 <label>Username :</label>
 <input type="email" name="username" placeholder="Valid email address"> <br>
 <label>Password</label>

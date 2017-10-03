@@ -19,26 +19,30 @@ Class Login_Database extends CI_Model {
     }
 
     public function login($data) {
-        $condition = "user_name =" . "'" . $data['username'] . "' AND password=" . "'" . $data['password']  . "'";
-        $this->db->select('*');
-        $this->db->from('user_login');
-        $this->db->where($condition);
-        $this->db->limit('1');
-        $query = $this->db->get();
+//        $condition = "user_name =" . "'" . $data['username'] . "' AND password=" . "'" . $data['password']  . "'";
+//        $this->db->select('*');
+//        $this->db->from('user_login');
+//        $this->db->where($condition);
+//        $this->db->limit('1');
+//        $query = $this->db->get();
 
-        if($query->num_rows() == 1) {
-            return FALSE;
+
+        $query = "select * from user_login where user_name='" . $data['username'] . "' and password='" . $data['password'] . "'";
+        $result = $this->db->query($query);
+
+        if($result->num_rows() == 1) {
+            return TRUE;
         }
         else {
-            return TRUE;
+            return FALSE;
         }
     }
 
     public function read_user_information($username) {
-        $condition = "user_name" . "'" . $username . "'";
+        $condition = "user_name=" . "'" . $username . "'";
         $this->db->select('*');
         $this->db->from('user_login');
-        $this->db->where('$condition');
+        $this->db->where("$condition");
         $this->db->limit('1');
         $query = $this->db->get();
 
