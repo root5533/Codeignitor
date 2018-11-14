@@ -25,6 +25,7 @@ Class User_Transaction extends CI_Controller {
                 $this->load->view('statement',$data);
             }
             else {
+                var_dump("hahahahahaha");
                 $data['message_display'] = 'No transactions found during this period';
                 $this->load->view('past_transaction',$data);
             }

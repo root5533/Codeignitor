@@ -53,6 +53,7 @@ Class User_Authentication extends CI_Controller {
                 $this->load->view('past_transaction');
             }
             else {
+                var_dump("blablablbalala");
                 $this->load->view('login_form');
             }
         }
