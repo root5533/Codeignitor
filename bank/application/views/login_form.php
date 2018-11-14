@@ -22,6 +22,7 @@ else if(isset($message_display)) {
 ?>
 
 <h2>Login Form</h2>
+<h4>Pikachu</h4>
 <hr>
 
 <?php echo form_open('user_authentication/user_login_process'); ?>
